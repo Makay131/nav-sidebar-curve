@@ -2,26 +2,38 @@
   <div class="sidebar" :class="{active: isSidebarActive}">
     <div class="list">
       <li v-on="{mouseover: handleMouseOver, mouseleave: handleMouseLeave}" ref="l-1" class="list__item" id="list__item-1">
+        <b></b>
+        <b></b>
         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
         <span class="list__title">Home</span>
       </li>
       <li v-on="{mouseover: handleMouseOver, mouseleave: handleMouseLeave}" ref="l-2" class="list__item" id="list__item-2">
+        <b></b>
+        <b></b>
         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
         <span class="list__title">Profile</span>
       </li>
       <li v-on="{mouseover: handleMouseOver, mouseleave: handleMouseLeave}" ref="l-3" class="list__item" id="list__item-3">
+        <b></b>
+        <b></b>
         <span class="icon"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
         <span class="list__title">Messages</span>
       </li>
       <li v-on="{mouseover: handleMouseOver, mouseleave: handleMouseLeave}" ref="l-4" class="list__item" id="list__item-4">
+        <b></b>
+        <b></b>
         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
         <span class="list__title">Settings</span>
       </li>
       <li v-on="{mouseover: handleMouseOver, mouseleave: handleMouseLeave}" ref="l-5" class="list__item" id="list__item-5">
+        <b></b>
+        <b></b>
         <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
         <span class="list__title">Help</span>
       </li>
       <li v-on="{mouseover: handleMouseOver, mouseleave: handleMouseLeave}" ref="l-6" class="list__item" id="list__item-6">
+        <b></b>
+        <b></b>
         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
         <span class="list__title">Signout</span>
       </li>
@@ -77,7 +89,7 @@ export default {
   }
 
   .sidebar.active {
-    width: 250px;
+    width: 220px;
   }
 
 
@@ -94,16 +106,16 @@ export default {
     align-items: center;
     gap: 20px;
     line-height: 40px;
-    width: 100%;
     transition: all .4s ease;
     text-align: center;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     cursor: pointer;
     padding: 5px;
-
+    
     margin-left: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    position: relative;
   }
 
   .list__item:hover {
@@ -136,15 +148,60 @@ export default {
     justify-content: center;
   }
 
-/*
-  .sidebar .list > .list__item > .list__title {
-    display: none;
-    transition: display .4s ease;
+  .list__item b:nth-child(1) {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: -20px;
+    left: 0;
+    background: #561467;
+
+    transition: all .4s ease;
   }
-  .sidebar.active .list > .list__item > .list__title {
-    display: block;
+
+  .list__item.active b:nth-child(1) {
+    background: #fff;
   }
-*/
+
+
+  .list__item b:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #561467;
+    border-bottom-right-radius: 20px;
+  }
+  .list__item b:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: -20px;
+    left: 0;
+    background: #561467;
+
+    transition: all .4s ease;
+  }
+
+  .list__item.active b:nth-child(2) {
+    background: #fff;
+  }
+
+
+  .list__item b:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #561467;
+    border-top-right-radius: 20px;
+  }
+
+
 
 
 </style>
